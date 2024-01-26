@@ -1,0 +1,253 @@
+body{
+    margin: 0px;
+}
+#container{ /* para los id es # */
+    height: 100vh; /*view port es toda la pantalla- el vh es una medida fija*/
+    width: 100%;
+    display: flex;
+
+}
+#portada{
+    width: 40%;
+    height: 100%; /*el 100% solo trabaja con una medida fija*/ 
+    background-image: url(imagenes/fondo1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    position: absolute;
+    top: 5vh;
+    left: 2%;
+}
+.menu span{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px; 
+    margin-left: 7px;
+
+}
+.logo img{ 
+    width: 42.139px;
+    height: 41px;
+    margin-right: 17px;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo span{
+    color: #FFF;
+
+font-family: Inter;
+font-size: 38px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.38px;
+
+}
+
+.redsocial{
+    position:absolute;
+    bottom: 10vh;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    
+}
+.container-redsocial{
+    background-color: rgb(255, 255, 255);
+    border-radius: 21.533px;
+    padding: 10px;
+}
+.container-redsocial img{
+    width: 20.4px;
+    height: 20.4px;
+
+
+}
+#container-form{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap:68px;
+}
+
+.login-text{
+    color: #2F3367;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px; 
+    display: flex;
+    flex-direction: column;
+}
+.login-text-h3{
+    color: #8E8E8E;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px
+}
+.login-photo{
+    display: flex;
+    flex-direction: column;
+    gap:28px;
+}
+.login-photo2{
+    gap: 7px;
+}
+.login-photo2 span{
+    color: #6B6D92;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 155.556% */
+}
+b{
+    color: #303468;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+}
+.login-text-button{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+.login-photo-button{
+    border-radius: 8px;
+    background: #F2F2F2;    
+    padding: 12px 18px 12px 18px;
+    display: flex;
+    justify-content: space-between;/*tiene la porpiedad de poner un objeto a la izq y otros a la derecha espaciados */
+    align-items: center;
+    gap:20px;
+}
+.login-photo-button .remove a{
+    color: #FF2C2C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 175% */
+    text-decoration: none;
+}
+
+.link-button{
+    display: flex;
+    align-items: center;
+    gap: 160px;
+
+}
+.link-button a{
+    color: #303468;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    text-decoration-line: underline;
+}
+.link-button button{
+
+    display: flex;
+    width: 170px;
+    height: 70px;
+    padding: 18px;
+    flex-direction: row;
+    align-items:center;
+    border-radius: 8px;
+    background: #007DFA;
+    justify-content: space-between;
+    border:none
+    
+}
+.link-button span{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 160% */
+}
+.text-button{
+    display: flex;
+    justify-content: space-between;
+    border-top:1px solid #DFDFDF;
+    padding-top: 20px;
+
+}
+.text-button span{
+    color: #4C4F7C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+
+}
+.text-button .sign-up{
+    color: #007DFA;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 175% */
+
+}
+
+@media screen and (max-width:1000px) {
+    #portada{
+        display: none;
+    }
+    #container-form{
+        width:100%;
+        background-image: url(imagenes/fondo1.png);
+    }
+    .formulario{
+        background-color: rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 30px;
+    }
+    .link-button button{
+
+       
+        width:130px;
+        height: 60px;
+        padding: 18px;
+        
+    }
+}
+@media screen and (max-width:600px) {
+    .formulario{
+        background-color: rgb(255, 255, 255);
+        padding: 15px;
+        margin: 20px;
+        border-radius: 30px;
+    }
+    .link-button{
+        display: flex;
+        align-items: center;
+        gap: 80px;
+    }
+    
+    
+}

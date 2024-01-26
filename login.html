@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleindex.css">
+    <script>
+        function Login(event) {//eventos del navegador 
+            event.preventDefault() //desabilita las cosas predeterminadas
+            var email = document.getElementById("email").value
+            var password = document.getElementById("password").value
+            console.log(email, password)
+
+            fetch("http://localhost:8020/login", {//accede a los recursos de la API
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, password: password})
+            }).then((resultado) => {//por si todo sale bien
+                console.log(resultado)
+                if (resultado.status >=400){
+                    throw new Error ("Usuario no encontrado.") 
+                }
+                return resultado.json()
+            
+            }).then((usuario) => {//por si todo sale bien
+                console.log(usuario)
+                window.location.href="http://127.0.0.1:5500/HTML/index.html"
+            }).catch((error) => {//por si todo sale mal 
+                console.log(error)
+                var etiquetaError= document.getElementById("Error")
+                etiquetaError.innerHTML=error.message
+
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="container"> Iniciar sesión</div>
+        <div class="form-container">
+            <label for="email"> Correo electronico </label> <br>
+            <input type="email" id="email" class="input-padron" required placeholder="email@dominio.com"/>
+    
+        </div>
+        <div class="form-container">
+            <label for="password"> Contraseña</label> <br>
+            <input type="password" id="password" class="input-padron" required placeholder="*******"/>
+
+        </div>
+        <a href="index.html" target="_parent">Registrarse</a>
+
+        <button onclick="Login(event)">Ingresar </button>
+        <div id="Error"></div>
+    </form>
+
+</body>
+
+</html>

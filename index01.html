@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleindex.css">
+    <script>
+        fetch("http://localhost:8020/users").then((resultado) => resultado.json()).then((usuarios) => {
+            var tdbody1 = document.getElementsByTagName("tbody")[0]
+            for (let usuario of usuarios) {
+                var fila = document.createElement("tr")
+                fila.innerHTML = "<td>" + usuario.dni + "</td>" + "<td>" + usuario.name + "</td>" + "<td>" + usuario.age + "</td>" + "<td>" + usuario.telefono + "</td>"
+                tdbody1.appendChild(fila)
+            }
+
+            console.log(usuarios)
+        })
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre Completo</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    41180189
+                </td>
+                <td>
+                    Marlene Altamirano
+                </td>
+                <td>26</td>
+                <td>3875123596</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
